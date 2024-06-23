@@ -104,7 +104,6 @@ header {
 	opacity: 1;
 }
 
-
 @media (max-width: 576px) { 
 	.user-profile {
 		grid-template: auto auto 1fr auto / auto 1fr;

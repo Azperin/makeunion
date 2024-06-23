@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleHashChange() {
-	document.querySelectorAll('.app-wrapper section').forEach((node) => node.style.display = 'none');
+	document.querySelectorAll('main section').forEach((node) => node.style.display = 'none');
 	
 	if (location.hash) {
 		loadUserProfile(location.hash.replace('#', ''));
