@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пользователи</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-			<h1></h1>
+			<h1>Пользователи</h1>
         </header>
         <main>
-			 <article>
-                <section>
-                </section>
-            </article>
+			<article class="app-wrapper">
+				<section class="user-list" style="display: none;"></section>
+				<section class="user-profile"></section>
+			</article>
         </main>
         <footer>
-            <p>&copy;</p>
+			<p>&copy;</p>
         </footer>
     </div>
+	<template id="user-profile-template">
+		<div class="profile-top-actions"><a class="btn-link" href="#">К списку пользователей</a></div>
+		<div class="profile-avatar">
+			<figure><img src="avatar.jpg" alt="аватар" onerror="this.src='avatar.jpg'"></figure>
+		</div>
+		<div class="profile-name"><h2>Иванов Иван Иванович</h2></div>
+	</template>
+	<script src="script.js"></script>
 </body>
 </html>
