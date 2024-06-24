@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>TO-DO App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container">
         <header>
-            <h1>To-Do List</h1>
+            <h1>TO-DO App</h1>
         </header>
+		
+		<section>
+			<form id="todo-form" aria-label="Add a new task">
+				<input type="text" id="todo-input" placeholder="Enter a new task">
+				<button type="submit" id="todo-submit"></button>
+			</form>
+		</section>
+		
         <section>
-            <form id="todo-form" aria-label="Add a new task">
-                <input type="text" id="todo-input" placeholder="Enter a new task">
-                <button type="submit" id="todo-submit">Add</button>
-            </form>
-        </section>
-        <section>
-            <ul id="todo-list" aria-label="List of tasks"></ul>
+            <ul id="todo-list" aria-label="List of tasks">
+				<template id="todo-task-template">
+					<div class="task-toggle-done">
+						<input type="checkbox" />
+					</div>
+					<div class="task-remove">
+						<button></button>
+					</div>
+					<div class="task-added-time">TASK TIME</div>
+					<div class="task-name">TASK TEXT</div>
+				</template>
+			</ul>
         </section>
     </main>
     <script src="script.js"></script>
