@@ -16,7 +16,6 @@ body {
 	background-image: url(subtle-carbon.jpg);
 }
 
-
 .container {
     background: #fff;
 	margin: 20px;
@@ -25,7 +24,7 @@ body {
 	border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 	background: #ccc;
 	background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.664285782672444) 0%, rgba(255,255,255,0) 100%);
 }
@@ -82,14 +81,15 @@ ul#todo-list {
 
 ul#todo-list > li {
 	display: grid;
-	grid-template-columns: auto 1fr 1fr auto;
-	grid-template-rows: 1fr auto;
+	grid-template-columns: 1fr auto ;
+	grid-template-rows: auto 1fr auto;
 	gap: 10px;
 	grid-template-areas: 
-		"tdone tname tname tname"
-		"ttime ttime ttime tremove"
+		"ttime ttime"
+		"tname tname"
+		"tdone tremove"
 	;
-	border: 1px solid #ccc;
+	border: 1px solid #9c9c9c;
 	margin-bottom: 10px;
 	background-color: #ff8787;
 	background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,132,132,0.664285782672444) 0%, rgba(255,255,255,0) 100%);
@@ -107,19 +107,22 @@ ul#todo-list > li {
 	padding: 0;
 	margin: 0;
 	display: grid;
-	justify-content: center;
-	align-items: center;
+	justify-content: start;
+	align-items: end;
+	font-size: 14px;
+	color: #121212;
 }
 
-.task-toggle-done input {
+.task-toggle-done > * {
 	cursor: pointer;
+	user-select: none;
 }
 
 .task-added-time {
 	grid-area: ttime;
 	display: grid;
 	justify-content: start;
-	align-items: end;
+	align-items: start;
 	font-size: 12px;
 	opacity: .7;
 }
@@ -127,7 +130,7 @@ ul#todo-list > li {
 .task-name {
 	grid-area: tname;
 	word-break: break-all;
-	font-size: 22px;
+	font-size: 28px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.6);
 	text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
@@ -140,17 +143,16 @@ li.complete .task-name {
 .task-remove {
 	grid-area: tremove;
 	display: grid;
-	justify-content: center;
-	align-items: center;
+	justify-content: end;
+	align-items: end;
 }
 
 .task-remove > button {
 	padding: 0;
 	border: 0;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
 	background-image: url(icons8-delete.svg);
 	background-color: transparent;
-	
 }
 

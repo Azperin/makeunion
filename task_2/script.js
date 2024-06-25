@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 	
 	function renderTask(task) {
-		task.domElement.querySelector('.task-toggle-done > input').checked = task.isDone;
+		task.domElement.querySelector('.task-toggle-done input').checked = task.isDone;
+		task.domElement.querySelector('.task-toggle-done label > span').textContent = task.isDone ? 'Done':'Undone';
 		task.domElement.querySelector('.task-name').textContent = task.txt;
 		task.domElement.querySelector('.task-added-time').textContent = timeFormatter(task.addedAt);
 		
@@ -48,8 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			saveTodoList();
 		});
 		
-		task.domElement.querySelector('.task-toggle-done > input').addEventListener('change', () => {
+		task.domElement.querySelector('.task-toggle-done input').addEventListener('change', () => {
 			task.isDone = !task.isDone;
+			task.domElement.querySelector('.task-toggle-done label > span').textContent = task.isDone ? 'Done':'Undone';
 			task.domElement.classList.toggle('complete', task.isDone);
 			saveTodoList();
 		});
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function timeFormatter(timestamp) {
 		let time = Math.ceil(Math.abs(timestamp - Date.now()) / 1000);
-		console.log(time);
 		if (time < 60) return rtf.format(time * -1, 'second');
 		
 		if (time < 3600) {
